@@ -1,18 +1,18 @@
-def make_dress(func):
-    def dress():
-        print("穿衣服")
-        func()
-    return dress
+def login(password):
+    def decorated(func):
+        def check():
+            if password == 1234:
+                print("登入成功")
+                func()
+            else:
+                print("登入失敗")
+                return None
+        return check
+    return decorated
 
-def make_shoes(func):
-    def shoes():
-        print("穿鞋子")
-        func()
-    return shoes
+@login(password=1234)
+def report():
+    print("密件: 今日頭條...")
 
-@make_dress
-@make_shoes
-def out():
-    print("我出門了")
 
-out()
+report()
