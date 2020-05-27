@@ -17,12 +17,13 @@ url = 'https://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc
 data = json.loads(requests.get(url).text)
 #print(data)
 youbikes = data.get('result').get('records')
-sbi = 1 # 可借數量
-bemp = 1 # 可還數量
-m = 500
+sbi = 10 # 可借數量
+bemp = 10 # 可還數量
+m = 1000
+
 for youbike in youbikes:
     lat = float(youbike.get('lat'))
     lng = float(youbike.get('lng'))
-    mm = haversine(121.268160, 24.970612, lng, lat)
+    mm = haversine(121.297517, 25.056957, lng, lat)
     if int(youbike.get('sbi')) >= sbi and int(youbike.get('bemp')) >= bemp and mm < m:
         print(youbike.get('sna'), youbike.get('sbi'), youbike.get('bemp'), mm , "m")
