@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 google_url = 'https://www.google.com.tw/search'
 
 # 查詢參數
-my_params = {'q': '三倍卷'}
+my_params = {'q': '冷氣團'}
 
 # 下載 Google 搜尋結果
 r = requests.get(google_url, params = my_params)
