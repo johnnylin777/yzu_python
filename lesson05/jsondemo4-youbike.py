@@ -24,6 +24,6 @@ m = 500
 for youbike in youbikes:
     lat = float(youbike.get('lat'))
     lng = float(youbike.get('lng'))
-    mm = haversine(121.297760, 25.056595, lng, lat)    #樂技公司 121.297238, 25.019171 南崁25.056595, 121.297760
+    mm = haversine(121.297238, 25.019171, lng, lat)    #樂技公司 121.297238, 25.019171 南崁  25.056595, 121.297760
     if int(youbike.get('sbi')) >= sbi and int(youbike.get('bemp')) >= bemp and mm < m:
         print(youbike.get('sna'), youbike.get('sbi'), youbike.get('bemp'), mm , "m")
